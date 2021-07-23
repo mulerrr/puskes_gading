@@ -14,7 +14,7 @@ class HasilSwabController extends Controller
 
     function cekSwab(Request $request) {
         $request->validate([
-            'nik'=>'required'
+            'nik'=>'required|min:16|max:16'
         ]);
 
         $result = Result::where('nik', '=', $request->nik)->latest()->count() > 0;

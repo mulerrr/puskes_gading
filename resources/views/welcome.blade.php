@@ -270,7 +270,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="location-schedule">
-
+                                            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTMXeVE8g0e0V8czMzCH8VUgsKKmyyAfPtzc4aafCAP_Un5JL1pBEGTSfbvexRfyylnGnltK_mHT7mN/pubhtml?widget=true&amp;headers=false"></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -304,7 +304,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="location-schedule">
-
+                                            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSkBMhIs3e73HkfWKsC8qoENu4G-mLb1t2Jj2iPDMwO4lt82nE4LQfnZ6fg__uk1EBqToch3V5x_yf-/pubhtml?widget=true&amp;headers=false"></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -339,7 +339,8 @@
                                         @endif
                                     </div>
                                     <label for="nik" class="form-label">Nomor Induk Kependudukan (NIK)</label>
-                                    <input type="number" class="form-control" id="nik" placeholder="Masukkan 16 digit NIK" name="nik">
+                                    <input type="number" class="form-control" id="nik" placeholder="Masukkan 16 digit NIK" name="nik" max="16" min="16" required>
+                                    <span class="text-danger">@error('nik'){{ $message }} @enderror</span>
                                 </div>
                             </div>
                             <div class="modal-footer">
