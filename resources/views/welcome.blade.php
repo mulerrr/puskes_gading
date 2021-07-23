@@ -339,7 +339,7 @@
                                         @endif
                                     </div>
                                     <label for="nik" class="form-label">Nomor Induk Kependudukan (NIK)</label>
-                                    <input type="number" class="form-control" id="nik" placeholder="Masukkan 16 digit NIK" name="nik" max="16" min="16" required>
+                                    <input type="number" class="form-control" id="nik" placeholder="Masukkan 16 digit NIK" name="nik" minlength="16" maxlength="16" required>
                                     <span class="text-danger">@error('nik'){{ $message }} @enderror</span>
                                 </div>
                             </div>

@@ -20,7 +20,7 @@ class HasilSwabController extends Controller
         $result = Result::where('nik', '=', $request->nik)->latest()->count() > 0;
         $data = Result::where('nik', '=', $request->nik)->orderByDesc('created_at')->limit(1)->first();
 
-        if($data != NULL){
+        if($data){
             // return view('hasil-swab.cek');
             return view('hasil-swab.hasilswab')->with('data', $data);
         } else {
