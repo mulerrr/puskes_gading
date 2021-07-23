@@ -1,16 +1,12 @@
+/* ---------------- Bootstrap Override -------------- */
 h1 {
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 50px;
     line-height: 62px;
-    /* or 124% */
-
     display: flex;
     align-items: center;
-
-    /* Black 100 */
-
     color: #25282B;
 }
 .btn-primary {
@@ -23,6 +19,18 @@ h1 {
     line-height: 30px;
     background-color: #010AE9;
 }
+.btn-secondary {
+    padding: 16px 32px;
+    border-radius: 52px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: #e9e8ef;
+    border-color: transparent;
+    color: #25282B;
+}
 .btn-sm {
     padding: 12px 24px;
     font-family: Poppins;
@@ -31,6 +39,34 @@ h1 {
     font-size: 16px;
     line-height: 24px;
 }
+.modal-content {
+    border: none;
+    border-radius: 1rem;
+}
+.modal-header {
+    padding: 1.5rem 2rem 1rem 2rem;
+    border-bottom: none;
+}
+.modal-title {
+    font-weight: 800;
+}
+.modal-body {
+    padding: 1rem 2rem;
+}
+.modal-footer {
+    padding: 0 2rem 1.5rem 2rem;
+    border-top: none;
+}
+.form-control {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #212529;
+    background-color: #fff;
+    border-radius: .8rem;
+}
+/* ---------------- Bootstrap Override -------------- */
+
 .mobile-nav {
     display: none;
     background-color: rgba(255,255,255,.65);
@@ -212,7 +248,6 @@ header {
     display: flex;
     align-items: center;
     letter-spacing: -0.005em;
-    /* Black 100 */
     color: #25282B;
 }
 .info {
@@ -239,6 +274,9 @@ header {
 }
 .register-img img {
     width: 100%;
+}
+.desktop-center {
+    text-align: center;
 }
 .submenu {
     font-family: Poppins;
@@ -298,7 +336,7 @@ header {
         font-size: 1rem;
         line-height: 1.75rem;
     }
-    .btn-primary {
+    .btn-primary, .btn-secondary {
         font-size: 1rem;
         line-height: 1.75rem;
         padding: 12px 32px;
@@ -368,5 +406,8 @@ header {
     }
     .register, .schedule {
         padding: 6.5rem 0;
+    }
+    .desktop-center {
+        text-align: left;
     }
 }

@@ -22,6 +22,7 @@
         <!-- Bootstrap 5 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
          
         <style>
             body {
@@ -83,7 +84,7 @@
                                             </div>
                                         </button>
                                     </div>
-                                    <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#cekSwab">Cek Hasil Swab</button>
+                                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Cek Hasil Swab</button>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +102,7 @@
                                     <img src="{{ URL::asset('images/logo/logo-pks-kelapa-gading.png'); }}" alt="Logo Puskesmas Kelapa Gading">
                                     PKC Kelapa Gading
                                 </div>
-                                <a href="" class="btn btn-primary btn-sm">Cek Hasil Swab</a>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Cek Hasil Swab</button>
                             </div>
                         </div>
                     </div>
@@ -236,7 +237,7 @@
                                         Konfirmasi Jadwal Vaksin Covid-19 untuk Pra Lansia dan Non Lansia
                                     </div>
                                 </div>
-                                <p class="mb-4 text-center">
+                                <p class="mb-4 desktop-center">
                                     Cek konfirmasi nama yang telah didaftarkan melalui bit.ly/vaksinpuskesmasgading untuk penerima vaksin COVID-19 dengan kriteria pra lansia atau pendamping berdasarkan pos vaksinasi yang Anda pilih saat mendaftar. Calon penerima vaksin  wajib membawa fotokopi KK dan KTP. Nomer antrian sesuai dengan kedatangan. Calon penerima vaksin akan tetap dilakukan pemeriksaan skrining dan dokumen saat pelaksanaan vaksinasi. Keputusan pemberian vaksin tetap diserahkan oleh petugas pelaksana.
                                 </p>
                             </div>
@@ -319,31 +320,43 @@
             </footer>
 
             <!-- Modal -->
-            <div class="modal fade" id="cekSwab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h5 class="modal-title" id="exampleModalLabel">Periksa Hasil Swab PCR</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                        <form action="{{ route('hasil-swab.cekswab') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <div class="result">
+                                        @if(Session::get('fail'))
+                                            <div class="alert alert-danger">
+                                                {{ Session::get('fail') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <label for="nik" class="form-label">Nomor Induk Kependudukan (NIK)</label>
+                                    <input type="number" class="form-control" id="nik" placeholder="Masukkan 16 digit NIK" name="nik">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Lihat Hasil</button>
+                        </form>
                     </div>
                 </div>
+                </div>
             </div>
+
         </div>
 
-        <!-- Bootstrap 5 -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <!-- jQuery 3 -->
         <script src="{{ URL::asset('js/jquery-3.6.0.js'); }}"></script>
+        <!-- Bootstrap 5 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <script>
             $(document).ready(function (){
@@ -370,10 +383,10 @@
                     }
                 );
 
-                $('#cekSwab').on('shown.bs.modal', function () {
-                    $('#myInput').trigger('focus')
-                    console.log('tes');
-                })
+                // $('#cekSwab').on('shown.bs.modal', function () {
+                //     $('#myInput').trigger('focus')
+                //     console.log('tes');
+                // })
 
                 var load_flag = true;
                 $(document).scroll(function() {
@@ -395,6 +408,13 @@
                         mypos = newscroll;
                     });
                 });
+
+                @if(Session::get('fail'))
+                    // <div class="alert alert-danger">
+                    //     {{ Session::get('fail') }}
+                    // </div>
+                    $('#exampleModal').modal('show');
+                @endif
 
             });
         </script>
