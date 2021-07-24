@@ -327,7 +327,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">Periksa Hasil Swab PCR</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="{{ route('hasil-swab.cekswab') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('hasil-swab.cekswab') }}" method="post" enctype="multipart/form-data" id="myForm">
                             @csrf
                             <div class="modal-body">
                                 <div class="mb-3">
@@ -339,7 +339,7 @@
                                         @endif
                                     </div>
                                     <label for="nik" class="form-label">Nomor Induk Kependudukan (NIK)</label>
-                                    <input type="number" class="form-control" id="nik" placeholder="Masukkan 16 digit NIK" name="nik" minlength="16" maxlength="16" required>
+                                    <input type="number" class="form-control" id="nik" placeholder="Masukkan 16 digit NIK" name="nik" minlength="16" maxlength="16" pattern=".{16,16}" required>
                                     <span class="text-danger">@error('nik'){{ $message }} @enderror</span>
                                 </div>
                             </div>
@@ -416,6 +416,14 @@
                     // </div>
                     $('#exampleModal').modal('show');
                 @endif
+
+                $( "#myForm" ).validate({
+                    rules: {
+                        field: {
+                            exactlength: 16
+                        }
+                    }
+                });
 
             });
         </script>
