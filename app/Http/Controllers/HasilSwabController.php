@@ -24,7 +24,8 @@ class HasilSwabController extends Controller
             // return view('hasil-swab.cek');
             return view('hasil-swab.hasilswab')->with('data', $data);
         } else {
-            return back()->with('fail', ' not found');
+            //return view('hasil-swab.hasilswab')->with('fail', 'Hasil Swab PCR masih dalam proses.');
+            return back()->with('fail', 'Hasil Swab PCR masih dalam proses.');
         }
 
         // if($request){
