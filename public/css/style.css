@@ -28,6 +28,16 @@ h2 {
     line-height: 30px;
     background-color: #010AE9;
 }
+.btn-danger {
+    padding: 16px 32px;
+    border-radius: 52px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: red;
+}
 .btn-secondary {
     padding: 16px 32px;
     border-radius: 52px;
@@ -409,7 +419,7 @@ header {
 .list__two-text__icon__text__caption.result-Positif {
     color: #C72037;
 }
-.list__two-text__icon__text__caption.result-negatif {
+.list__two-text__icon__text__caption.result-Negatif {
     color: #25974C;
 }
 .swab-result__right__illustration img {

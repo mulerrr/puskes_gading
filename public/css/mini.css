@@ -1,0 +1,16 @@
+.cek-pcr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    border-radius: 20px;
+    box-shadow: 0px 22px 90px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+}
+.cek-pcr button {
+    margin-top: 1rem;
+}
+.cek-pcr form {
+    margin-bottom: 0;
+}

@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="swab-result__bottom">
-                    <a href="/" class="btn btn-primary">Kembali ke Beranda</a>
+                    <a href="hasilswab" class="btn btn-primary">Tutup</a>
                 </div>
             </div>
         </div>
