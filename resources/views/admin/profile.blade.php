@@ -62,6 +62,7 @@
                 <h1>Upload Excel Hasil Tes PCR</h1>
                 <form action="{{ route('result.import') }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    
                     <div class="result">
                         @if(Session::get('success'))
                             <div class="alert alert-success">

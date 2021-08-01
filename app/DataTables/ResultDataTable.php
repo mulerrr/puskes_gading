@@ -60,7 +60,7 @@ class ResultDataTable extends DataTable
             'nik',
             'result',
             'name',
-            'hp',
+            'result_date',
             'updated_at'
         ];
     }

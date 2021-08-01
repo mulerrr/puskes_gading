@@ -13,6 +13,6 @@ class Result extends Model
         'nik',
         'result',
         'name',
-        'hp',
+        'result_date',
     ];
 }

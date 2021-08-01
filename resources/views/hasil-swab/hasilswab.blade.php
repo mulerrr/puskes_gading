@@ -46,14 +46,27 @@
                         </div>
                         <div class="list__two-text__icon">
                             <div class="list__two-text__icon__icon">
+                                <img src="{{ URL::asset('images/icon/icon-nik.png'); }}">
+                            </div>
+                            <div class="list__two-text__icon__text">
+                                <div class="list__two-text__icon__text__title">
+                                    Nama
+                                </div>
+                                <div class="list__two-text__icon__text__caption">
+                                    {{ $data->name }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list__two-text__icon">
+                            <div class="list__two-text__icon__icon">
                                 <img src="{{ URL::asset('images/icon/icon-schedule.png'); }}">
                             </div>
                             <div class="list__two-text__icon__text">
                                 <div class="list__two-text__icon__text__title">
-                                    Tanggal
+                                    Tanggal Swab
                                 </div>
                                 <div class="list__two-text__icon__text__caption">
-                                    {{ \Carbon\Carbon::parse($data->updaed_at)->format('d F Y')}}
+                                    {{ \Carbon\Carbon::parse($data->result_date)->format('d F Y')}}
                                 </div>
                             </div>
                         </div>

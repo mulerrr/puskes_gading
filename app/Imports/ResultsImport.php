@@ -17,6 +17,8 @@ class ResultsImport implements ToModel
         return new Result([
             'nik' => $row[0],
             'result' => $row[1],
+            'name' => $row[2],
+            'result_date' => $row[3],
         ]);
     }
 }

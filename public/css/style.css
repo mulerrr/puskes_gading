@@ -416,10 +416,22 @@ header {
 .swab-result__bottom a {
     margin: 0 auto;
 }
+.list__two-text__icon__text__caption.result-POSITIF {
+    color: #C72037;
+}
+.list__two-text__icon__text__caption.result-NEGATIF {
+    color: #25974C;
+}
 .list__two-text__icon__text__caption.result-Positif {
     color: #C72037;
 }
 .list__two-text__icon__text__caption.result-Negatif {
+    color: #25974C;
+}
+.list__two-text__icon__text__caption.result-positif {
+    color: #C72037;
+}
+.list__two-text__icon__text__caption.result-negatif {
     color: #25974C;
 }
 .swab-result__right__illustration img {

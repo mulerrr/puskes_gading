@@ -18,7 +18,7 @@ class CreateResultsTable extends Migration
             $table->string('nik');
             $table->string('result');
             $table->string('name')->nullable();
-            $table->string('hp')->nullable();
+            $table->timestamp('result_date')->nullable();
             $table->timestamps();
         });
     }

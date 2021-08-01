@@ -25,7 +25,7 @@ class ResultFactory extends Factory
             'nik' => $this->faker->numberBetween(3000000000000000, 5000000000000000),
             'result' => $this->faker->randomElement(array('Positif', 'Negatif')),
             'name' => $this->faker->name,
-            'hp' => $this->faker->phoneNumber,
+            'result_date' => $this->faker->dateTimeThisMonth(),
         ];
     }
 }

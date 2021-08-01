@@ -19,6 +19,6 @@ class ResultController extends Controller
 
     function import(){
         Excel::Import(new ResultsImport, request()->file('file'));
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Upload Success!');
     }
 }
