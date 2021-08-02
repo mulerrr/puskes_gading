@@ -30,7 +30,7 @@
             <div class="swab-result">
                 <div class="swab-result__top">
                     <div class="swab-result__left">
-                        <h2>Hasil Swab PCR</h2>
+                        <h2>Hasil Swab PCR <br> Puskesmas Kelapa Gading</h2>
                         <div class="list__two-text__icon">
                             <div class="list__two-text__icon__icon">
                                 <img src="{{ URL::asset('images/icon/icon-nik.png'); }}">
